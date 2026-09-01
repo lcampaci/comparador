@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Preços - Lista de Compras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/png" href="icon-192.png">
+</head>
+<body>
+
+    <header>
+        <h1>🛒 Comparador de Preços</h1>
+        <p>Compare 3 mercados e monte a lista mais barata!</p>
+        <button id="installBtn" style="display:none;">📥 Instalar App</button>
+    </header>
+
+    <main>
+        <!-- Área das 3 Listas de Mercados -->
+        <section class="markets-grid">
+            <!-- Mercado 1 -->
+            <div class="market-card">
+                <h2>🏪 Mercado 1</h2>
+                <input type="text" class="market-name" value="Mercado 1" placeholder="Nome do mercado">
+                <div class="input-group">
+                    <input type="text" class="item-name m1" placeholder="Nome do produto...">
+                    <input type="number" step="0.01" class="item-price m1" placeholder="R$" min="0">
+                    <button class="add-btn m1">+</button>
+                </div>
+                <ul class="item-list" id="list1"></ul>
+            </div>
+
+            <!-- Mercado 2 -->
+            <div class="market-card">
+                <h2>🏬 Mercado 2</h2>
+                <input type="text" class="market-name" value="Mercado 2" placeholder="Nome do mercado">
+                <div class="input-group">
+                    <input type="text" class="item-name m2" placeholder="Nome do produto...">
+                    <input type="number" step="0.01" class="item-price m2" placeholder="R$" min="0">
+                    <button class="add-btn m2">+</button>
+                </div>
+                <ul class="item-list" id="list2"></ul>
+            </div>
+
+            <!-- Mercado 3 -->
+            <div class="market-card">
+                <h2>🛍️ Mercado 3</h2>
+                <input type="text" class="market-name" value="Mercado 3" placeholder="Nome do mercado">
+                <div class="input-group">
+                    <input type="text" class="item-name m3" placeholder="Nome do produto...">
+                    <input type="number" step="0.01" class="item-price m3" placeholder="R$" min="0">
+                    <button class="add-btn m3">+</button>
+                </div>
+                <ul class="item-list" id="list3"></ul>
+            </div>
+        </section>
+
+        <!-- Botão de Comparação -->
+        <div class="compare-section">
+            <button id="compareBtn">⚖️ Comparar e Gerar Lista Final</button>
+            <button id="clearBtn">🗑️ Limpar Tudo</button>
+        </div>
+
+        <!-- Lista Final (Mais Baratos) -->
+        <section class="final-section">
+            <h2>✅ Lista Final — Itens Mais Baratos</h2>
+            <ul class="item-list" id="finalList"></ul>
+            <div class="total-box">
+                <strong>Total estimado: </strong>
+                <span id="totalValue">R$ 0,00</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>App PWA — funciona sem internet! 📱</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
